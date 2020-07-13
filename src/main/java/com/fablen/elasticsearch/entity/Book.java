@@ -1,16 +1,25 @@
 package com.fablen.elasticsearch.entity;
 
 import lombok.Data;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
 
 /**
- * @author zhangbaosheng
+ * <p>
+ * Description:
+ * </p>
+ *
+ * @author ZhangBaoSheng
+ * @version v1.0.0
  */
 @Data
-@Document(indexName = "index_book")
 public class Book {
-    @Field
-    private int id;
-    private String name;
+    private String bookName;
+    private int bookPrice;
+
+    public Book() {
+    }
+
+    public Book(String name, int price) {
+        this.bookName = name;
+        this.bookPrice = price;
+    }
 }
